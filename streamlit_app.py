@@ -4,11 +4,6 @@ from cogniflow_utils import cogniflow_request_object
 import cv2
 import numpy as np
 
-st.set_page_config(
-    page_title="Cogniflow Image Demo",
-    page_icon="https://uploads-ssl.webflow.com/60510407e7726b268293da1c/60ca08f7a2abc9c7c79c4dac_logo_ico256x256.png",
-)
-
 def _max_width_():
     max_width_str = f"max-width: 1200px;"
     st.markdown(
@@ -24,8 +19,7 @@ def _max_width_():
 
 _max_width_()
 
-st.title('🔎 Object Detection and Counting')
-st.markdown("Powered by [Cogniflow](https://www.cogniflow.ai)")
+st.title('🔎 Glioma AI')
 
 model = st.secrets["model_url"]
 api_key = st.secrets["api_key"]
