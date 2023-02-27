@@ -19,7 +19,8 @@ def _max_width_():
 
 _max_width_()
 
-st.title('🔎 GliomaAI.org')
+st.title('🔎 Glioma AI')
+st.markdown("Powered by [GliomaAI.org](https://www.gliomaai.org)")
 
 model = st.secrets["model_url"]
 api_key = st.secrets["api_key"]
