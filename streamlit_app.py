@@ -67,25 +67,10 @@ if click:
             color = colors[index_color]
             bgr = [int(c) for c in color]
             cv2.rectangle(imgResult, (int(box['x_left_top']), int(box['y_left_top'])), (int(box['x_right_bottom']), int(box['y_right_bottom'])), bgr, 2)
-            
-            score = str(box['confidence_score'])
-            text = cat + ' (' + score + ')'
-            text_len = len(text)
-            (x, y) = (int(box['x_left_top']), int(box['y_left_top']))
-            
-            cv2.rectangle(imgResult, (x - 1, y - 22), (x + text_len * 7 + 15, y), bgr, -1)
-            
-            brightness = sum(list(bgr))/3
-            if brightness < 130:
-                text_color = (255,255,255)
-            else:
-                text_color = (0,0,0)
-            cv2.putText(imgResult, text, (int(box['x_left_top']) + 2, int(box['y_left_top']) - 5), cv2.FONT_HERSHEY_DUPLEX, 0.45, text_color, 1, cv2.LINE_AA)
-            
             cv2.putText(imgResult, cat, (int(box['x_left_top']), int(box['y_left_top']) - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.6, bgr, 2)
-            
-        imageRGB = cv2.cvtColor(imgResult , cv2.COLOR_BGR2RGB)
 
+        imageRGB = cv2.cvtColor(imgResult , cv2.COLOR_BGR2RGB)
+        
         col1, col2 = st.columns(2, gap="large")
 
         col1.write("Image:")
